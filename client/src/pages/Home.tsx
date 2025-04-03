@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,6 +10,8 @@ import heroSvg from '@/assets/indian-women-hero.svg';
 const Home = () => {
   const { speak, cancel } = useSpeechSynthesis();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideshowImages = indianWomenImages.hero.slideshow;
 
   const features = [
     {
@@ -59,6 +61,17 @@ const Home = () => {
       cancel();
     };
   }, [cancel]);
+  
+  // Slideshow effect for hero images
+  useEffect(() => {
+    if (slideshowImages.length <= 1) return;
+    
+    const intervalId = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slideshowImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(intervalId);
+  }, [slideshowImages.length]);
 
   const readHeroSection = () => {
     const heroText = "Empowering Women of India Through Voice Technology. Our mission is to provide accessible technology solutions that help women overcome barriers and find their voice in today's digital world.";
@@ -76,13 +89,19 @@ const Home = () => {
         {/* Background SVG with Animation */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-primary opacity-90 z-0">
           <div className="absolute inset-0 z-0">
-            <img 
-              src={indianWomenImages.hero.main} 
-              alt="Indian women" 
-              className="absolute inset-0 w-full h-full object-cover opacity-25 transition-opacity duration-1000"
-              style={{ opacity: isLoaded ? 0.25 : 0 }}
-              onLoad={() => setIsLoaded(true)}
-            />
+            {/* Slideshow of images featuring Indian women */}
+            {slideshowImages.map((image, index) => (
+              <img 
+                key={index}
+                src={image} 
+                alt={`Indian women ${index + 1}`} 
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                style={{ 
+                  opacity: isLoaded && currentSlide === index ? 0.25 : 0,
+                  zIndex: currentSlide === index ? 1 : 0 
+                }}
+              />
+            ))}
           </div>
           <HeroAnimation className="opacity-40" />
           <img 
@@ -120,6 +139,22 @@ const Home = () => {
                   </svg>
                   Voice Tour
                 </Button>
+              </div>
+              
+              {/* Slideshow Indicators */}
+              <div className="flex justify-center mt-8 gap-2">
+                {slideshowImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      currentSlide === index 
+                        ? 'bg-[#DD6B20] scale-110' 
+                        : 'bg-white/40 hover:bg-white/60'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
