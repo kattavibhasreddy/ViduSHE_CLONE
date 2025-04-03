@@ -1,11 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis';
+import HeroAnimation from '@/components/HeroAnimation';
+import { indianWomenImages } from '@/assets/indian-women-images';
+import heroSvg from '@/assets/indian-women-hero.svg';
 
 const Home = () => {
   const { speak, cancel } = useSpeechSynthesis();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const features = [
     {
@@ -41,53 +45,82 @@ const Home = () => {
     { number: "5K+", label: "Women Empowered" },
     { number: "200+", label: "Voice Resources" },
     { number: "50+", label: "Community Partners" },
-    { number: "15", label: "Countries Reached" }
+    { number: "15", label: "States Reached" }
   ];
 
-  // Cleanup speech on unmount
+  // Simulate loading effect for hero animation
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+    
     return () => {
+      clearTimeout(timer);
       cancel();
     };
   }, [cancel]);
 
   const readHeroSection = () => {
-    const heroText = "Empowering Women Through Voice Technology. Our mission is to provide accessible technology solutions that help women overcome barriers and find their voice in today's digital world.";
+    const heroText = "Empowering Women of India Through Voice Technology. Our mission is to provide accessible technology solutions that help women overcome barriers and find their voice in today's digital world.";
     speak(heroText);
   };
 
   const activateVoiceTour = () => {
-    speak("Welcome to VoiceHer. We are on a mission to empower women through voice technology. You can navigate this website using voice commands. Try saying 'go to services' or 'read this page'.");
+    speak("Welcome to VoiceHer. We are on a mission to empower women of India through voice technology. You can navigate this website using voice commands. Try saying 'go to services' or 'read this page'.");
   };
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-primary text-white">
-        <div className="absolute inset-0 bg-primary-600 opacity-20"></div>
-        <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-10">
+      <section className="relative text-white overflow-hidden" style={{ minHeight: '650px' }}>
+        {/* Background SVG with Animation */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-primary opacity-90 z-0">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={indianWomenImages.hero.main} 
+              alt="Indian women" 
+              className="absolute inset-0 w-full h-full object-cover opacity-25 transition-opacity duration-1000"
+              style={{ opacity: isLoaded ? 0.25 : 0 }}
+              onLoad={() => setIsLoaded(true)}
+            />
+          </div>
+          <HeroAnimation className="opacity-40" />
+          <img 
+            src={heroSvg} 
+            alt="Women of India illustration" 
+            className={`absolute inset-0 w-full h-full object-contain transition-all duration-1000 transform ${isLoaded ? 'scale-100 opacity-80' : 'scale-95 opacity-0'}`}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 py-20 md:py-28 lg:py-32 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Empowering Women Through Voice Technology</h1>
-            <p className="text-lg md:text-xl mb-8">Our mission is to provide accessible technology solutions that help women overcome barriers and find their voice in today's digital world.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                size="lg"
-                onClick={readHeroSection}
-                className="bg-[#DD6B20] hover:bg-[#F18D4D] text-white font-medium py-3 px-6 rounded-lg shadow-lg"
-              >
-                Learn More
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={activateVoiceTour}
-                className="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-6 rounded-lg shadow-lg flex items-center justify-center"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m-2.828-9.9a9 9 0 0112.728 0" />
-                </svg>
-                Voice Tour
-              </Button>
+            <div className={`transition-all duration-700 delay-300 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-100">
+                Empowering Women of India Through Voice Technology
+              </h1>
+              <p className="text-lg md:text-xl mb-8">
+                Our mission is to provide accessible technology solutions that help women overcome barriers and find their voice in today's digital world.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button 
+                  size="lg"
+                  onClick={readHeroSection}
+                  className="bg-[#DD6B20] hover:bg-[#F18D4D] text-white font-medium py-3 px-6 rounded-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+                >
+                  Learn More
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={activateVoiceTour}
+                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30 font-medium py-3 px-6 rounded-lg shadow-lg flex items-center justify-center transition-all hover:shadow-xl hover:-translate-y-1"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m-2.828-9.9a9 9 0 0112.728 0" />
+                  </svg>
+                  Voice Tour
+                </Button>
+              </div>
             </div>
           </div>
         </div>
