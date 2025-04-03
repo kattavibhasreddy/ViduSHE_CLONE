@@ -71,10 +71,10 @@ const Services = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative inline-block">
+            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2 relative inline-block">
               Our Services
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#DD6B20] to-primary transform -translate-y-2"></span>
             </h1>
+            <div className="w-48 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-2"></div>
             <p className="text-lg text-neutral-700 max-w-2xl mx-auto mt-6">
               We offer a range of services designed to empower women of India through accessible voice technology.
             </p>
@@ -173,10 +173,10 @@ const Services = () => {
                   <span className="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 self-start">
                     Voice-Enabled Service
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 relative inline-block">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2 relative inline-block">
                     {services[activeService - 1].title}
-                    <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-gradient-to-r from-[#DD6B20] to-primary transform translate-y-2"></span>
                   </h2>
+                  <div className="w-32 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-4"></div>
                 </div>
                 
                 <div className="prose prose-lg max-w-none mt-6">

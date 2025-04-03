@@ -97,7 +97,8 @@ const Contact = () => {
     <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-2xl md:text-3xl font-bold text-primary mb-4">Contact Us</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-primary mb-2">Contact Us</h1>
+          <div className="w-36 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-4 mx-auto"></div>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto">Have questions or want to learn more? Reach out to us using our voice-enabled contact form.</p>
         </div>
         
@@ -249,7 +250,7 @@ const Contact = () => {
                     </svg>
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-neutral-700">info@voiceher.org</p>
+                      <p className="text-neutral-700">info@vidushe.org</p>
                     </div>
                   </div>
                   

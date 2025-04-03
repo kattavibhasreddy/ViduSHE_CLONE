@@ -191,7 +191,8 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Ready to Explore Our Services?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Ready to Explore Our Services?</h2>
+          <div className="w-48 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-4 mx-auto"></div>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto mb-8">Discover how our voice-enabled platform can help you break barriers and access opportunities.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link href="/services">

@@ -1,39 +1,40 @@
-// This file contains URLs to images featuring Indian women
-// These are stock images representing diverse Indian women in various contexts
+// This file contains URLs to images featuring authentic Indian women
+// These feature women in traditional Indian clothing and settings
 
 export const indianWomenImages = {
   // Hero images
   hero: {
-    main: "https://images.unsplash.com/photo-1611516491426-03025e6043c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Indian woman with traditional jewelry
-    secondary: "https://images.unsplash.com/photo-1625461701174-8468ce12257c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400&q=80" // Group of Indian women
+    main: "https://images.unsplash.com/photo-1595097616747-c0836bbf1511?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Indian woman in traditional saree
+    secondary: "https://images.unsplash.com/photo-1639646062476-33a3739a93e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400&q=80" // Group of Indian women in traditional dress
   },
   
-  // Service images
+  // Service images - all featuring authentic Indian women
   services: {
-    digitalLiteracy: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman using laptop
-    careerDevelopment: "https://images.unsplash.com/photo-1623119309021-9275cc02246d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Professional Indian woman in office
-    entrepreneurship: "https://images.unsplash.com/photo-1603912699214-92627f304eb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman entrepreneur
-    mentorship: "https://images.unsplash.com/photo-1617711151863-e4dd5fa4ba21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80" // Group mentorship session
+    digitalLiteracy: "https://images.unsplash.com/photo-1624969862644-791f3dc98927?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman with laptop in traditional setting
+    careerDevelopment: "https://images.unsplash.com/photo-1633414654227-2b5ea828b3ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman professional in traditional office
+    entrepreneurship: "https://images.unsplash.com/photo-1611754349119-9d08f5f04392?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman entrepreneur in traditional clothing
+    mentorship: "https://images.unsplash.com/photo-1631157769632-2a26ef01caec?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80" // Group of Indian women in mentorship setting
   },
   
-  // Testimonials
+  // Testimonials - authentic Indian women portraits
   testimonials: {
-    sarahJohnson: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80", // Portrait of Indian woman
-    priyaRao: "https://images.unsplash.com/photo-1611432579423-2b9f5ad5329f?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80", // Another Indian woman portrait
-    divyaSharma: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80" // Third Indian woman portrait
+    anjaliBhatia: "https://images.unsplash.com/photo-1614644147798-f8c0fc9da7f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80", // Portrait of woman in traditional Indian jewelry
+    priyaRao: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80", // Woman with traditional bindi and jewelry
+    divyaSharma: "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80" // Woman with traditional Indian styling
   },
   
-  // Team members
+  // Team members - Indian women in professional settings
   team: {
-    founder: "https://images.unsplash.com/photo-1590997681275-3a66d8130e2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80", // Founder portrait
-    director: "https://images.unsplash.com/photo-1626190183163-da00cc826fb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80", // Director portrait
-    techLead: "https://images.unsplash.com/photo-1598897516650-e4dc73d8e417?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80" // Tech lead portrait
+    founder: "https://images.unsplash.com/photo-1618379400243-08fbbd0a23c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80", // Founder in traditional Indian attire
+    director: "https://images.unsplash.com/photo-1630208232589-e42b29428b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80", // Director in saree
+    techLead: "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80" // Tech lead with traditional Indian elements
   }
 };
 
-// South Indian design patterns and motifs
+// Indian design patterns and motifs
 export const indianDesignPatterns = {
-  kolam: "https://images.unsplash.com/photo-1621360936613-dc6cc6654a9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80", // Traditional kolam pattern
-  temple: "https://images.unsplash.com/photo-1606011334315-025e4baab810?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80", // Temple architecture pattern
-  textiles: "https://images.unsplash.com/photo-1612271598104-742d823dc818?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80" // Textile pattern
+  kolam: "https://images.unsplash.com/photo-1622129710657-c117fc947262?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80", // Traditional kolam pattern
+  rangoli: "https://images.unsplash.com/photo-1608046218954-fca4678ce1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80", // Traditional rangoli design
+  temple: "https://images.unsplash.com/photo-1590093804707-247891526c6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80", // Temple architecture pattern
+  textiles: "https://images.unsplash.com/photo-1612995923001-27fcd3248456?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80" // Traditional textile pattern
 };

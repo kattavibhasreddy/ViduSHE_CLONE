@@ -19,7 +19,8 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-2xl md:text-3xl font-bold text-primary mb-4">About VoiceHer</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-primary mb-2 relative inline-block">About ViduSHE</h1>
+            <div className="w-48 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-2 mx-auto"></div>
             <p className="text-lg text-neutral-700">Learn about our mission, vision, and the team behind our social enterprise.</p>
           </div>
           
@@ -27,7 +28,7 @@ const About = () => {
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-semibold mb-4">Our Story</h2>
               <div id="story-content">
-                <p className="text-neutral-700 mb-4">VoiceHer was founded in 2020 with a simple yet powerful mission: to make technology accessible to all women, regardless of their technical background, physical abilities, or geographic location.</p>
+                <p className="text-neutral-700 mb-4">ViduSHE was founded in 2020 with a simple yet powerful mission: to make technology accessible to all women, regardless of their technical background, physical abilities, or geographic location.</p>
                 <p className="text-neutral-700 mb-4">We recognized that voice technology offers a unique opportunity to break down barriers to digital inclusion. For women who face literacy challenges, physical disabilities, or time constraints, voice-enabled features provide a pathway to access resources, build skills, and connect with opportunities.</p>
                 <p className="text-neutral-700">Today, our platform serves thousands of women across 15 countries, offering voice-enabled resources, training, and support services designed to empower women in their personal and professional lives.</p>
               </div>

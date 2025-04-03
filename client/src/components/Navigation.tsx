@@ -84,16 +84,20 @@ const Navigation = () => {
           <Link href="/">
             <div className={`flex items-center transition-transform hover:scale-105 ${isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`} style={{ transitionDuration: '0.5s' }}>
               <div className="relative mr-3">
+                {/* Woman silhouette logo instead of microphone */}
                 <svg className="h-12 w-12 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="currentColor" fillOpacity="0.2" />
-                  <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" 
-                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C9.79086 2 8 3.79086 8 6V8C8 10.2091 9.79086 12 12 12C14.2091 12 16 10.2091 16 8V6C16 3.79086 14.2091 2 12 2Z" fill="currentColor" fillOpacity="0.7"/>
+                  <path d="M5 14.5C5 11.4624 7.46243 9 10.5 9H13.5C16.5376 9 19 11.4624 19 14.5V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V14.5Z" fill="currentColor" fillOpacity="0.4"/>
+                  <path d="M7 18C7 17.4477 7.44772 17 8 17H16C16.5523 17 17 17.4477 17 18C17 18.5523 16.5523 19 16 19H8C7.44772 19 7 18.5523 7 18Z" fill="currentColor" fillOpacity="0.8"/>
                 </svg>
-                {/* Decorative element suggesting Indian design */}
+                {/* Decorative elements suggesting Indian design */}
                 <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#FF9933] opacity-80"></div>
                 <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-[#138808] opacity-70"></div>
               </div>
-              <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#DD6B20] font-bold text-2xl">VoiceHer India</h1>
+              <div>
+                <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#DD6B20] font-bold text-2xl">ViduSHE</h1>
+                <p className="text-xs text-gray-600 -mt-1 italic">SHE got Voice</p>
+              </div>
             </div>
           </Link>
         </div>

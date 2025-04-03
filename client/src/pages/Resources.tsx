@@ -125,10 +125,10 @@ const Resources = () => {
            
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative inline-block">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2 relative inline-block">
             Indian Women's Resource Library
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#DD6B20] to-primary transform -translate-y-2"></span>
           </h1>
+          <div className="w-64 h-1 bg-gradient-to-r from-[#DD6B20] to-primary rounded-full mb-2"></div>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto mt-4">
             Access our collection of voice-searchable resources designed specifically for Indian women to support your personal and professional journey.
           </p>
