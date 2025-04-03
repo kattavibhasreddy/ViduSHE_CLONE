@@ -8,10 +8,8 @@ export const indianWomenImages = {
     secondary: "https://images.unsplash.com/photo-1639646062476-33a3739a93e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400&q=80", // Group of Indian women in traditional dress
     slideshow: [
       "https://images.unsplash.com/photo-1609154767012-331529e7d73b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Woman in colorful traditional dress
-      "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Women in traditional sarees
-      "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Woman with traditional jewelry and bindi
-      "https://images.unsplash.com/photo-1615886753866-79396abc5c1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Woman in traditional dress with henna
-      "https://images.unsplash.com/photo-1639646062476-33a3739a93e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80"  // Group of Indian women in traditional clothing
+      "https://images.unsplash.com/photo-1620756236308-65c3ef5d25f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80", // Woman in traditional saree
+      "https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80"  // Woman in elegant traditional saree
     ]
   },
   
@@ -19,8 +17,8 @@ export const indianWomenImages = {
   services: {
     digitalLiteracy: "https://images.unsplash.com/photo-1624969862644-791f3dc98927?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman with laptop in traditional setting
     careerDevelopment: "https://images.unsplash.com/photo-1633414654227-2b5ea828b3ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman professional in traditional office
-    entrepreneurship: "https://images.unsplash.com/photo-1631432620068-089a4e243eef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman entrepreneur in traditional clothing (updated)
-    mentorship: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80" // Group of Indian women in mentorship setting (updated)
+    entrepreneurship: "https://images.unsplash.com/photo-1617019114824-3ca3e52028fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80", // Indian woman entrepreneur (updated to single female)
+    mentorship: "https://images.unsplash.com/photo-1594750852563-5ed8d0b47ad9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=350&q=80" // Indian woman mentor (updated to single female)
   },
   
   // Testimonials - authentic Indian women portraits
