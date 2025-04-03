@@ -66,7 +66,7 @@ const Home = () => {
   };
 
   const activateVoiceTour = () => {
-    speak("Welcome to VoiceHer. We are on a mission to empower women of India through voice technology. You can navigate this website using voice commands. Try saying 'go to services' or 'read this page'.");
+    speak("Welcome to ViduSHE. We are on a mission to empower women of India through voice technology. You can navigate this website using voice commands. Try saying 'go to services' or 'read this page'.");
   };
 
   return (

@@ -34,7 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
                   <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" 
                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <h3 className="text-xl font-primary font-bold">VoiceHer</h3>
+                <h3 className="text-xl font-primary font-bold">ViduSHE</h3>
               </div>
               <p className="text-neutral-300 mb-4">Empowering women through accessible voice technology.</p>
               <div className="flex space-x-4">
@@ -99,7 +99,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
           
           <div className="border-t border-neutral-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-neutral-300 text-sm mb-4 md:mb-0">&copy; {new Date().getFullYear()} VoiceHer. All rights reserved.</p>
+            <p className="text-neutral-300 text-sm mb-4 md:mb-0">&copy; {new Date().getFullYear()} ViduSHE. All rights reserved.</p>
             <div className="flex space-x-6">
               <a href="#" className="text-neutral-300 hover:text-white text-sm transition-all">Privacy Policy</a>
               <a href="#" className="text-neutral-300 hover:text-white text-sm transition-all">Terms of Service</a>

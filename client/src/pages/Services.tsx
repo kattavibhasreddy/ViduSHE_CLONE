@@ -36,7 +36,7 @@ const Services = () => {
       id: 3,
       title: "Entrepreneurship Support",
       description: "Get voice-guided assistance for starting and growing your business, including resources for funding, marketing, and operations.",
-      longDescription: "VoiceHer's Entrepreneurship Support program provides comprehensive resources for women business owners. Through voice-enabled tools, women can access step-by-step guidance on business planning, funding opportunities, marketing strategies, financial management, and operational best practices. The platform includes voice-searchable databases of grants and loans specifically for women entrepreneurs, and connects users with mentors who have successfully built businesses in similar fields.",
+      longDescription: "ViduSHE's Entrepreneurship Support program provides comprehensive resources for women business owners. Through voice-enabled tools, women can access step-by-step guidance on business planning, funding opportunities, marketing strategies, financial management, and operational best practices. The platform includes voice-searchable databases of grants and loans specifically for women entrepreneurs, and connects users with mentors who have successfully built businesses in similar fields.",
       image: indianWomenImages.services.entrepreneurship
     },
     {
