@@ -1,4 +1,6 @@
 import { users, type User, type InsertUser, contactMessages, type InsertContact, type ContactMessage, resources, type Resource, type InsertResource } from "@shared/schema";
+import { db } from "./db";
+import { eq, like, or } from "drizzle-orm";
 
 export interface IStorage {
   // User operations
@@ -17,90 +19,89 @@ export interface IStorage {
   searchResources(query: string): Promise<Resource[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contactMessages: Map<number, ContactMessage>;
-  private resources: Map<number, Resource>;
-  
-  private currentUserId: number;
-  private currentContactId: number;
-  private currentResourceId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.contactMessages = new Map();
-    this.resources = new Map();
-    
-    this.currentUserId = 1;
-    this.currentContactId = 1;
-    this.currentResourceId = 1;
-    
-    // Initialize with some sample resources
-    this.addSampleResources();
-  }
-
+// DatabaseStorage implementation using PostgreSQL
+export class DatabaseStorage implements IStorage {
   // User operations
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db.insert(users).values(insertUser).returning();
     return user;
   }
   
   // Contact operations
   async createContactMessage(message: InsertContact): Promise<ContactMessage> {
-    const id = this.currentContactId++;
-    const contactMessage: ContactMessage = { 
+    // Add the created timestamp
+    const contactWithTimestamp = { 
       ...message, 
-      id, 
       createdAt: new Date().toISOString() 
     };
-    this.contactMessages.set(id, contactMessage);
+    
+    const [contactMessage] = await db
+      .insert(contactMessages)
+      .values(contactWithTimestamp)
+      .returning();
+      
     return contactMessage;
   }
   
   async getContactMessages(): Promise<ContactMessage[]> {
-    return Array.from(this.contactMessages.values());
+    return db.select().from(contactMessages);
   }
   
   // Resource operations
   async getResources(): Promise<Resource[]> {
-    return Array.from(this.resources.values());
+    return db.select().from(resources);
   }
   
   async getResourcesByCategory(category: string): Promise<Resource[]> {
-    return Array.from(this.resources.values()).filter(
-      (resource) => resource.category === category
-    );
+    return db
+      .select()
+      .from(resources)
+      .where(eq(resources.category, category));
   }
   
   async getResourceById(id: number): Promise<Resource | undefined> {
-    return this.resources.get(id);
+    const [resource] = await db
+      .select()
+      .from(resources)
+      .where(eq(resources.id, id));
+      
+    return resource;
   }
   
   async searchResources(query: string): Promise<Resource[]> {
-    const lowercaseQuery = query.toLowerCase();
-    return Array.from(this.resources.values()).filter(
-      (resource) => 
-        resource.title.toLowerCase().includes(lowercaseQuery) ||
-        resource.description.toLowerCase().includes(lowercaseQuery) ||
-        resource.content.toLowerCase().includes(lowercaseQuery)
-    );
+    const searchPattern = `%${query}%`;
+    
+    return db
+      .select()
+      .from(resources)
+      .where(
+        or(
+          like(resources.title, searchPattern),
+          like(resources.description, searchPattern),
+          like(resources.content, searchPattern)
+        )
+      );
   }
+}
+
+// Initialize sample resources function to populate the database
+export async function initializeSampleResources(): Promise<void> {
+  // Check if resources already exist
+  const existingResources = await db.select().from(resources).limit(1);
   
-  // Helper method to initialize sample resources
-  private addSampleResources(): void {
-    const sampleResources: Omit<Resource, "id">[] = [
+  if (existingResources.length === 0) {
+    // Add sample resources
+    const sampleResources = [
       {
         title: "Resume Building Guide",
         description: "A comprehensive guide to creating a standout resume that highlights your skills and experience effectively.",
@@ -138,11 +139,10 @@ export class MemStorage implements IStorage {
       }
     ];
     
-    sampleResources.forEach(resource => {
-      const id = this.currentResourceId++;
-      this.resources.set(id, { ...resource, id });
-    });
+    // Insert all resources at once
+    await db.insert(resources).values(sampleResources);
   }
 }
 
-export const storage = new MemStorage();
+// Export the database storage instance
+export const storage = new DatabaseStorage();
