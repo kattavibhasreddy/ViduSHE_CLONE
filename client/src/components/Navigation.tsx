@@ -45,6 +45,8 @@ const Navigation = () => {
             window.location.href = '/services';
           } else if (command.includes('resources') || command.includes('go to resources')) {
             window.location.href = '/resources';
+          } else if (command.includes('safe space') || command.includes('go to safe space')) {
+            window.location.href = '/safe-space';
           } else if (command.includes('about') || command.includes('go to about')) {
             window.location.href = '/about';
           } else if (command.includes('contact') || command.includes('go to contact')) {
@@ -70,6 +72,7 @@ const Navigation = () => {
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
     { path: '/resources', label: 'Resources' },
+    { path: '/safe-space', label: 'Safe Space' },
     { path: '/about', label: 'About Us' },
     { path: '/contact', label: 'Contact' }
   ];

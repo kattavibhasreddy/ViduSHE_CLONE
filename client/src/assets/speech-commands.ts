@@ -51,6 +51,10 @@ export const handleVoiceCommand = (command: string): VoiceAction => {
     return { type: 'navigate', path: '/resources' };
   }
   
+  if (lowerCommand.includes('go to safe space') || lowerCommand.includes('navigate to safe space') || lowerCommand === 'safe space') {
+    return { type: 'navigate', path: '/safe-space' };
+  }
+  
   if (lowerCommand.includes('go to about') || lowerCommand.includes('navigate to about') || lowerCommand === 'about') {
     return { type: 'navigate', path: '/about' };
   }
