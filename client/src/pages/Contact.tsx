@@ -240,7 +240,7 @@ const Contact = () => {
                     </svg>
                     <div>
                       <p className="font-medium">Phone</p>
-                      <p className="text-neutral-700">(123) 456-7890</p>
+                      <p className="text-neutral-700"></p>
                     </div>
                   </div>
                   
@@ -261,7 +261,7 @@ const Contact = () => {
                     </svg>
                     <div>
                       <p className="font-medium">Address</p>
-                      <p className="text-neutral-700">123 Innovation Street<br />Tech City, TX 75001</p>
+                      <p className="text-neutral-700">Hyderabad, India</p>
                     </div>
                   </div>
                 </div>

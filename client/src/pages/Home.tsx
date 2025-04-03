@@ -42,10 +42,10 @@ const Home = () => {
   ];
 
   const impactStats = [
-    { number: "5K+", label: "Women Empowered" },
-    { number: "200+", label: "Voice Resources" },
-    { number: "50+", label: "Community Partners" },
-    { number: "15", label: "States Reached" }
+    { number: "Coming Soon", label: "Women Empowered" },
+    { number: "Coming Soon", label: "Voice Resources" },
+    { number: "Coming Soon", label: "Community Partners" },
+    { number: "Coming Soon", label: "States Reached" }
   ];
 
   // Simulate loading effect for hero animation
@@ -181,7 +181,7 @@ const Home = () => {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-lg mb-4 italic">"As someone with visual impairments, this voice-enabled platform has been a game-changer for me. I can now access resources, build my skills, and connect with opportunities independently."</p>
-                <p className="font-medium">Sarah Johnson, Digital Skills Graduate</p>
+                <p className="font-medium">Anvitha, Digital Skills Graduate</p>
               </div>
             </div>
           </div>

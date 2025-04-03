@@ -28,9 +28,9 @@ const About = () => {
             <CardContent className="p-6 md:p-8">
               <h2 className="text-xl font-semibold mb-4">Our Story</h2>
               <div id="story-content">
-                <p className="text-neutral-700 mb-4">ViduSHE was founded in 2020 with a simple yet powerful mission: to make technology accessible to all women, regardless of their technical background, physical abilities, or geographic location.</p>
+                <p className="text-neutral-700 mb-4">ViduSHE was founded in 2025 with a simple yet powerful mission: to make technology accessible to all women, regardless of their technical background, physical abilities, or geographic location.</p>
                 <p className="text-neutral-700 mb-4">We recognized that voice technology offers a unique opportunity to break down barriers to digital inclusion. For women who face literacy challenges, physical disabilities, or time constraints, voice-enabled features provide a pathway to access resources, build skills, and connect with opportunities.</p>
-                <p className="text-neutral-700">Today, our platform serves thousands of women across 15 countries, offering voice-enabled resources, training, and support services designed to empower women in their personal and professional lives.</p>
+                <p className="text-neutral-700">Our platform aims to serve thousands of women across countries, offering voice-enabled resources, training, and support services designed to empower women in their personal and professional lives.</p>
               </div>
               
               <div className="mt-6 flex justify-end">
