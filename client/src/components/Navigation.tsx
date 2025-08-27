@@ -3,6 +3,9 @@ import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { useSpeechSynthesis } from '@/hooks/useSpeechSynthesis';
+import { useAuthStore } from '@/lib/auth';
+import { apiRequest } from '@/lib/queryClient';
+import { useToast } from '@/hooks/use-toast';
 
 const Navigation = () => {
   const [location] = useLocation();
@@ -12,6 +15,25 @@ const Navigation = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { startListening, stopListening, isListening } = useSpeechRecognition();
   const { speak } = useSpeechSynthesis();
+  const { user, isAuthenticated, logout } = useAuthStore();
+  const { toast } = useToast();
+
+  const handleLogout = async () => {
+    try {
+      await apiRequest('POST', '/api/auth/logout', {});
+      logout();
+      toast({
+        title: "Logged out successfully",
+        description: "You have been logged out of your account.",
+      });
+    } catch (error) {
+      toast({
+        title: "Logout failed",
+        description: "There was an error logging out. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   useEffect(() => {
     // Simulate a loading effect for a smoother experience
@@ -139,7 +161,7 @@ const Navigation = () => {
         </nav>
         
         {/* Voice Navigation Control with Indian-inspired design */}
-        <div className="ml-4 flex items-center">
+        <div className="ml-4 flex items-center space-x-4">
           <Button 
             onClick={toggleVoiceControl}
             variant="outline"
@@ -154,6 +176,43 @@ const Navigation = () => {
           </Button>
           <span className={`ml-2 text-sm font-medium hidden md:inline transition-all duration-500 ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}>{voiceStatus}</span>
           <div className={`ml-2 w-3 h-3 rounded-full ${isListening ? 'bg-[#DD6B20]' : voiceActive ? 'bg-[#48BB78]' : 'bg-neutral-400'} voice-indicator hidden md:block`}></div>
+          
+          {/* Authentication buttons */}
+          {isAuthenticated ? (
+            <div className="flex items-center space-x-2">
+              <span className="text-sm text-neutral-700 hidden md:inline">
+                Welcome, {user?.username}
+              </span>
+              <Button 
+                onClick={handleLogout}
+                variant="outline"
+                size="sm"
+                className="border-primary text-primary hover:bg-primary hover:text-white"
+              >
+                Logout
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-2">
+              <Link href="/login">
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
+                >
+                  Login
+                </Button>
+              </Link>
+              <Link href="/register">
+                <Button 
+                  size="sm"
+                  className="bg-gradient-to-r from-primary to-[#DD6B20] hover:from-[#DD6B20] hover:to-primary text-white"
+                >
+                  Sign Up
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </header>
